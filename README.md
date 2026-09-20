@@ -1,4 +1,4 @@
-# Proof of concept implementation for "PVTPRE and Its appplications in data rights confirmation"
+# Proof of concept implementation for "PVC-TPRE and Its appplications in data rights confirmation"
 
 # Pre-requisites
 
