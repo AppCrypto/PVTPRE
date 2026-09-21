@@ -174,12 +174,15 @@ func Combine(param *Param, shares []*ReEncShare, ct *CT1, commitments []*bn128.G
 			seen[share.Index] = true
 			valid = append(valid, share)
 		}
+		// seen[share.Index] = true
+		// valid = append(valid, share)
 	}
+	// valid:= t
 	if len(valid) < t {
 		return nil, errors.New("fewer than t valid ciphertext shares")
 	}
 
-	selected := valid[:t]
+	selected := shares[:t]
 	combined := new(bn128.GT).ScalarBaseMult(big.NewInt(0))
 	for i, share := range selected {
 		coefficient, err := lagrangeAtZero(selected, i)
